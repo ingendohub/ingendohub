@@ -2,7 +2,7 @@ import axios from "axios";
 
 /* ================= AXIOS INSTANCE ================= */
 const companyApi = axios.create({
-  baseURL: "http://localhost:3001/api/company",
+  baseURL: (process.env.REACT_APP_API_URL || "http://localhost:3001/api") + "/company",
   timeout: 10000,
   headers: {
     "Content-Type": "application/json"
