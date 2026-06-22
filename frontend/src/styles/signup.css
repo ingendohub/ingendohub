@@ -1,0 +1,163 @@
+/* =============================== */
+/* SIGNUP / LOGIN SECTION          */
+/* =============================== */
+.signup-section {
+  max-width: 480px;
+  margin: 60px auto 80px;
+  padding: 25px;
+  background-color: #fff;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  font-family: 'Inter', sans-serif;
+  color: #0a2a66; /* homepage main text color */
+}
+
+.signup-section h2 {
+  text-align: center;
+  color: #0a2347; /* homepage primary blue */
+  font-weight: 800;
+  margin-bottom: 30px;
+  font-size: 2.3rem;
+}
+
+/* Form groups */
+form .form-group {
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+form label {
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #333333; /* homepage dark purple */
+  font-size: 1rem;
+}
+
+form input[type="text"],
+form input[type="email"],
+form input[type="tel"],
+form input[type="password"] {
+  padding: 14px 15px;
+  font-size: 1rem;
+  border: 1.5px solid #ccd7e0;
+  border-radius: 14px;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  font-family: 'Inter', sans-serif;
+  color: #333;
+  background-color: #fff;
+}
+
+form input[type="text"]:focus,
+form input[type="email"]:focus,
+form input[type="tel"]:focus,
+form input[type="password"]:focus {
+  border-color: #007bff;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.15);
+  background-color: #fff;
+}
+
+/* Password toggle */
+.password-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.password-wrapper input {
+  flex: 1;
+}
+
+.toggle-password {
+  position: absolute;
+  right: 15px;
+  background: transparent;
+  border: none;
+  color: #007bff;
+  font-weight: 700;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: color 0.25s ease;
+}
+
+.toggle-password:hover {
+  color: #005fcc;
+  text-decoration: underline;
+}
+
+/* Submit button */
+.btn-submit {
+  background: hsl(211, 74%, 36%); /* same as homepage blue */
+  padding: 14px 40px;
+  border-radius: 35px;
+  color: #fff;
+  font-size: 1.1rem;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.25s ease, transform 0.25s ease;
+  width: 100%;
+  margin-top: 20px;
+  box-shadow: 0 10px 25px rgba(0, 123, 255, 0.3);
+}
+
+.btn-submit:hover {
+  background: #005fcc;
+  transform: translateY(-2px);
+}
+
+/* Redirect text */
+.redirect {
+  margin-top: 25px;
+  text-align: center;
+  font-size: 1rem;
+  color: #444;
+}
+
+.redirect a {
+  color: #007bff;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.25s ease;
+}
+
+.redirect a:hover {
+  color: #005fcc;
+  text-decoration: underline;
+}
+
+/* =============================== */
+/* RESPONSIVE                     */
+/* =============================== */
+@media (max-width: 600px) {
+  .signup-section {
+    margin: 40px 15px;
+    padding: 20px;
+  }
+
+  .signup-section h2 {
+    font-size: 1.8rem;
+  }
+
+  form label {
+    font-size: 0.9rem;
+  }
+
+  form input[type="text"],
+  form input[type="email"],
+  form input[type="tel"],
+  form input[type="password"] {
+    font-size: 0.9rem;
+    padding: 12px 14px;
+  }
+
+  .btn-submit {
+    font-size: 1rem;
+    padding: 12px 0;
+  }
+
+  .redirect {
+    font-size: 0.9rem;
+  }
+}

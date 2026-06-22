@@ -1,0 +1,127 @@
+/* ===== Footer — Ingendohub Green Theme ===== */
+.site-footer {
+  background: var(--surface, #fff);
+  color: var(--text, #1a2010);
+  border-top: 1.5px solid var(--border, #d4e0b8);
+  padding: 36px 0 0;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 24px 32px;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 28px;
+}
+
+.footer-brand h3 {
+  font-size: 18px;
+  margin: 0 0 10px;
+  letter-spacing: 1.5px;
+  color: var(--primary, #6ea00a);
+  font-weight: 900;
+}
+
+.footer-brand p {
+  color: var(--muted, #617086);
+  line-height: 1.6;
+  font-size: 13px;
+  max-width: 300px;
+}
+
+.footer-links h4,
+.footer-social h4 {
+  font-size: 13px;
+  margin: 0 0 14px;
+  color: var(--muted);
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.footer-links a {
+  display: block;
+  color: var(--text-light, #4a5568);
+  text-decoration: none;
+  padding: 5px 0;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.22s ease;
+}
+
+.footer-links a:hover {
+  color: var(--primary, #6ea00a);
+  padding-left: 4px;
+}
+
+.social-icons {
+  display: flex;
+  gap: 14px;
+}
+
+.social-icons a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1.5px solid var(--border, #d4e0b8);
+  color: var(--muted, #617086);
+  font-size: 16px;
+  transition: all 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+  background: var(--surface-alt);
+}
+
+.social-icons a:hover {
+  color: #fff;
+  background: var(--primary, #6ea00a);
+  border-color: var(--primary, #6ea00a);
+  transform: translateY(-3px) scale(1.1);
+  box-shadow: 0 6px 16px rgba(110, 160, 10, 0.3);
+}
+
+.footer-bottom {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 14px 24px;
+  text-align: center;
+  border-top: 1px solid var(--border, #d4e0b8);
+}
+
+.footer-bottom p {
+  font-size: 12px;
+  color: var(--muted, #617086);
+  margin: 0;
+}
+
+/* Dark mode */
+:root[data-theme="dark"] .site-footer {
+  background: #0c130a;
+  border-top-color: #2a3d18;
+}
+
+:root[data-theme="dark"] .footer-bottom {
+  border-top-color: #2a3d18;
+}
+
+:root[data-theme="dark"] .social-icons a {
+  background: #141d0e;
+  border-color: #2a3d18;
+}
+
+@media (max-width: 768px) {
+  .footer-container {
+    grid-template-columns: 1fr;
+    gap: 32px;
+    text-align: center;
+  }
+
+  .footer-brand p { max-width: 100%; }
+
+  .social-icons { justify-content: center; }
+
+  .footer-links a:hover { padding-left: 0; }
+}
