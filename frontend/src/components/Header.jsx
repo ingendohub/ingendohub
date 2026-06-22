@@ -300,7 +300,7 @@ const Header = ({ onOpenLogin, onOpenSignup }) => {
         </div>
       </div>
 
-      {/* Mobile menu */}
+      {/* Mobile menu — conditionally rendered */}
       {menuOpen && (
         <div className="mobile-menu">
           
@@ -334,7 +334,7 @@ const Header = ({ onOpenLogin, onOpenSignup }) => {
           </button>
 
           {!isLoggedIn && (
-            <div style={{ display: 'flex', flexDirection: 'column', gap: 8, marginTop: 12 }}>
+            <div className="mobile-auth-btns">
               <button className="btn-outline mobile-btn" onClick={() => { onOpenLogin(); setMenuOpen(false); }}>
                 {t("nav_signin")}
               </button>

@@ -508,7 +508,6 @@
 
 /* Mobile menu */
 .mobile-menu {
-  display: none;
   position: fixed;
   top: 64px;
   left: 0;
@@ -516,11 +515,18 @@
   height: calc(100vh - 64px);
   background: #ffffff;
   border-top: 2px solid var(--primary-light, rgba(110,160,10,0.15));
-  padding: 20px;
+  padding: 20px 16px;
   flex-direction: column;
   gap: 8px;
   z-index: 999;
   overflow-y: auto;
+  display: none; /* Hidden by default on desktop */
+  box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+}
+
+/* Mobile menu rendered = always flex when React renders it */
+.mobile-menu[style], .mobile-menu:not([style="display: none;"]) {
+  display: flex;
 }
 
 .mobile-menu a {
@@ -541,7 +547,52 @@
   color: var(--primary, #6ea00a);
 }
 
-.mobile-btn { width: 100%; text-align: center; margin-top: 8px; }
+.mobile-btn {
+  width: 100%;
+  text-align: center;
+  margin-top: 4px;
+  padding: 14px 20px;
+  font-size: 15px;
+  font-weight: 700;
+  border-radius: 10px;
+  cursor: pointer;
+  font-family: inherit;
+  transition: all 0.22s ease;
+  min-height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Mobile sign-in/sign-up container */
+.mobile-auth-btns {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 12px;
+  padding: 0 4px;
+}
+
+.mobile-auth-btns .btn-outline.mobile-btn {
+  border: 2px solid var(--primary, #6ea00a);
+  background: transparent;
+  color: var(--primary, #6ea00a);
+}
+
+.mobile-auth-btns .btn-outline.mobile-btn:hover {
+  background: var(--primary, #6ea00a);
+  color: #fff;
+}
+
+.mobile-auth-btns .btn-primary.mobile-btn {
+  background: var(--primary, #6ea00a);
+  color: #fff;
+  border: none;
+}
+
+.mobile-auth-btns .btn-primary.mobile-btn:hover {
+  background: var(--primary-dark, #527808);
+}
 
 .mobile-main-nav {
   display: flex;

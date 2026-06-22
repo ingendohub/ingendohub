@@ -4,6 +4,8 @@ const express = require("express");
 const cors = require("cors");
 const helmet = require("helmet");
 const rateLimit = require("express-rate-limit");
+const session = require("express-session");
+const passport = require("./config/passport");
 
 const connectDB = require("./config/db");
 
@@ -48,6 +50,18 @@ const generalLimiter = rateLimit({
 // ================= BODY PARSERS =================
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+
+// ================= SESSION & PASSPORT =================
+app.use(
+  session({
+    secret: process.env.SESSION_SECRET || process.env.JWT_SECRET || "ingendohub_session_secret",
+    resave: false,
+    saveUninitialized: false,
+    cookie: { secure: false },
+  })
+);
+app.use(passport.initialize());
+app.use(passport.session());
 
 // ================= SAFE REQUIRE =================
 const safeRequire = (path) => {

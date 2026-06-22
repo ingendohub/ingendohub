@@ -18,13 +18,25 @@ const userSchema = new mongoose.Schema(
 
     phone: {
       type: String,
-      required: true,
       trim: true,
+      default: "",
     },
 
     password: {
       type: String,
       required: true,
+    },
+
+    // Google OAuth fields
+    googleId: {
+      type: String,
+      sparse: true,
+      index: true,
+    },
+
+    picture: {
+      type: String,
+      default: "",
     },
 
     role: {

@@ -8,30 +8,30 @@ const SuggestedDeals = () => {
   const deals = [
     {
       id: 1,
-      icon: <FiTag size={24} color="#1976d2" />,
+      icon: <FiTag size={24} color="var(--primary)" />,
       title: "Exclusive Desktop App Offer",
       desc: "Save up to 15% on your next booking when you use our official upcoming mobile and desktop application.",
       badge: "Save 15%",
-      bg: "#f0f4ff",
-      border: "#d7deea"
+      bg: "var(--primary-soft)",
+      border: "var(--primary-light)"
     },
     {
       id: 2,
-      icon: <FiMapPin size={24} color="#059669" />,
+      icon: <FiMapPin size={24} color="var(--accent)" />,
       title: "Discover Kigali's Premium Sites",
       desc: "Book a guided tour through Rwanda's rich history and vibrant Kigali neighborhoods.",
       badge: "Top Rated",
-      bg: "#ecfdf5",
-      border: "#a7f3d0"
+      bg: "var(--surface-alt)",
+      border: "var(--border)"
     },
     {
       id: 3,
-      icon: <FiAward size={24} color="#d97706" />,
+      icon: <FiAward size={24} color="var(--success)" />,
       title: "VIP Executive Travel",
       desc: "Upgrade to Executive Class on VIP buses with extra legroom, refreshments, and WiFi.",
       badge: "Upgrade",
-      bg: "#fffbeb",
-      border: "#fde68a"
+      bg: "var(--surface-alt)",
+      border: "var(--border)"
     }
   ];
 
@@ -41,7 +41,7 @@ const SuggestedDeals = () => {
         <h3 style={{ fontSize: '20px', fontWeight: '700', color: '#0f172a', margin: 0 }}>
           Recommended specifically for you
         </h3>
-        <button style={{ background: 'none', border: 'none', color: '#1976d2', fontWeight: '600', cursor: 'pointer', display: 'flex', alignItems: 'center', gap: '6px' }}>
+        <button style={{ background: 'none', border: 'none', color: 'var(--primary)', fontWeight: '600', cursor: 'pointer', display: 'flex', alignItems: 'center', gap: '6px' }}>
           Explore all <FiTrendingUp />
         </button>
       </div>

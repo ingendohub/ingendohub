@@ -143,7 +143,7 @@ const BookingForm = ({ onResults, allTrips = [] }) => {
         </div>
 
         <form onSubmit={handleSubmit}>
-          <div className="form-row" style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '16px', marginBottom: '20px' }}>
+          <div className="form-row">
             <div className="form-group">
               <label><FiMapPin /> {t("booking_from")}</label>
               <input
@@ -209,12 +209,11 @@ const BookingForm = ({ onResults, allTrips = [] }) => {
             </div>
           </div>
 
-          <div style={{ display: 'flex', justifyContent: 'center', marginTop: '8px' }}>
+          <div className="search-btn-row">
             <button
               type="submit"
               disabled={loading}
               className="btn-search"
-              style={{ maxWidth: '420px', width: '100%' }}
             >
               {loading ? t("booking_searching") : <><FiSearch size={20} /> {t("booking_search")}</>}
             </button>

@@ -22,6 +22,7 @@ import PrivacyPolicy from "./pages/public/PrivacyPolicy";
 import TermsConditions from "./pages/public/TermsConditions";
 import NotFound from "./pages/public/NotFound";
 import ResetPassword from "./pages/public/ResetPassword";
+import AuthCallback from "./pages/public/AuthCallback";
 
 
 /* ================= BOOKING COMPONENTS ================= */
@@ -87,6 +88,7 @@ function App() {
             {/* ============== PUBLIC ROUTES ============== */}
             <Route path="/" element={<Home />} />
             <Route path="/reset-password/:token" element={<ResetPassword />} />
+            <Route path="/auth/callback" element={<AuthCallback />} />
             <Route path="/available-buses" element={<AvailableBuses />} />
             <Route path="/about" element={<AboutUs />} />
             <Route path="/services" element={<Services />} />
