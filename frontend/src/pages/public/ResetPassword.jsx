@@ -3,7 +3,7 @@ import { useParams, useNavigate, Link } from "react-router-dom";
 import { FiLock, FiEye, FiEyeOff, FiAlertCircle, FiCheckCircle, FiArrowLeft, FiShield } from "react-icons/fi";
 import axiosPublic from "../../api/public/axiosPublic";
 import { useLang } from "../../i18n/LanguageContext";
-import logo from "../../assets/logo.svg";
+import logo from "../../assets/word-logo.jpg";
 
 const PasswordStrength = ({ password }) => {
   const getStrength = (pwd) => {
@@ -17,7 +17,7 @@ const PasswordStrength = ({ password }) => {
 
   const strength = getStrength(password);
   const labels = ["", "Weak", "Fair", "Good", "Strong"];
-  const colors = ["#e2e8f0", "#ef4444", "#f59e0b", "#3b82f6", "#10b981"];
+  const colors = ["#e2e8f0", "#ef4444", "#f59e0b", "#8cc40e", "#527808"];
 
   if (!password) return null;
 
@@ -88,7 +88,7 @@ const ResetPassword = () => {
   return (
     <div style={{
       minHeight: "100vh",
-      background: "linear-gradient(135deg, #0a2a66 0%, #1976d2 50%, #2196f3 100%)",
+      background: "linear-gradient(135deg, #0c1a06 0%, #162608 50%, #1e3a0c 100%)",
       display: "flex",
       alignItems: "center",
       justifyContent: "center",
@@ -102,7 +102,7 @@ const ResetPassword = () => {
           <div key={i} style={{
             position: "absolute",
             borderRadius: "50%",
-            background: "rgba(255,255,255,0.04)",
+            background: "rgba(140,196,14,0.05)",
             width: `${120 + i * 80}px`,
             height: `${120 + i * 80}px`,
             top: `${10 + i * 13}%`,
@@ -125,7 +125,7 @@ const ResetPassword = () => {
         }}>
           {/* Card Header */}
           <div style={{
-            background: "linear-gradient(135deg, #0a2a66, #1976d2)",
+            background: "linear-gradient(135deg, #0c1a06, #2e5c08)",
             padding: "32px 36px 28px",
             textAlign: "center",
           }}>
@@ -149,13 +149,13 @@ const ResetPassword = () => {
             {/* Icon */}
             <div style={{
               width: 60, height: 60, borderRadius: "50%",
-              background: "rgba(255,255,255,0.15)",
+              background: "rgba(140,196,14,0.2)",
               backdropFilter: "blur(10px)",
-              border: "2px solid rgba(255,255,255,0.25)",
+              border: "2px solid rgba(140,196,14,0.35)",
               display: "flex", alignItems: "center", justifyContent: "center",
               margin: "0 auto 16px",
             }}>
-              <FiShield size={28} color="#fff" />
+              <FiShield size={28} color="#a8d40e" />
             </div>
 
             <h1 style={{ color: "#fff", fontWeight: 800, fontSize: "22px", margin: "0 0 6px" }}>
@@ -176,10 +176,10 @@ const ResetPassword = () => {
               <div style={{ textAlign: "center" }}>
                 <div style={{
                   width: 72, height: 72, borderRadius: "50%",
-                  background: "linear-gradient(135deg, #10b981, #34d399)",
+                  background: "linear-gradient(135deg, #527808, #6ea00a)",
                   display: "flex", alignItems: "center", justifyContent: "center",
                   margin: "0 auto 20px",
-                  boxShadow: "0 8px 24px rgba(16, 185, 129, 0.35)",
+                  boxShadow: "0 8px 24px rgba(110,160,10,0.35)",
                 }}>
                   <FiCheckCircle size={36} color="#fff" />
                 </div>
@@ -193,10 +193,10 @@ const ResetPassword = () => {
                   onClick={() => navigate("/")}
                   style={{
                     width: "100%", padding: "14px",
-                    background: "linear-gradient(135deg, #1976d2, #1565c0)",
+                    background: "linear-gradient(135deg, #527808, #6ea00a)",
                     color: "#fff", fontWeight: 700, fontSize: "15px",
                     border: "none", borderRadius: "12px", cursor: "pointer",
-                    boxShadow: "0 4px 16px rgba(25, 118, 210, 0.35)",
+                    boxShadow: "0 4px 16px rgba(110,160,10,0.35)",
                     transition: "all 0.2s ease",
                     display: "flex", alignItems: "center", justifyContent: "center", gap: "8px",
                   }}
@@ -241,7 +241,7 @@ const ResetPassword = () => {
                       transition: "border-color 0.2s",
                       overflow: "hidden",
                     }}
-                    onFocus={(e) => e.currentTarget.style.borderColor = "#1976d2"}
+                    onFocus={(e) => e.currentTarget.style.borderColor = "#6ea00a"}
                     onBlur={(e) => e.currentTarget.style.borderColor = "#e5e7eb"}
                     >
                       <div style={{ padding: "0 12px", color: "#9ca3af" }}>
@@ -323,7 +323,7 @@ const ResetPassword = () => {
                       </p>
                     )}
                     {confirmPassword && confirmPassword === password && (
-                      <p style={{ color: "#10b981", fontSize: "12px", marginTop: "6px", fontWeight: 600, display: "flex", alignItems: "center", gap: "4px" }}>
+                      <p style={{ color: "#6ea00a", fontSize: "12px", marginTop: "6px", fontWeight: 600, display: "flex", alignItems: "center", gap: "4px" }}>
                         <FiCheckCircle size={13} /> Passwords match
                       </p>
                     )}
@@ -336,12 +336,12 @@ const ResetPassword = () => {
                     style={{
                       width: "100%", padding: "15px",
                       background: loading
-                        ? "#93c5fd"
-                        : "linear-gradient(135deg, #1976d2, #1565c0)",
+                        ? "#a5c96b"
+                        : "linear-gradient(135deg, #527808, #6ea00a)",
                       color: "#fff", fontWeight: 700, fontSize: "16px",
                       border: "none", borderRadius: "12px",
                       cursor: loading ? "not-allowed" : "pointer",
-                      boxShadow: "0 4px 16px rgba(25, 118, 210, 0.35)",
+                      boxShadow: "0 4px 16px rgba(110,160,10,0.35)",
                       transition: "all 0.2s ease",
                       display: "flex", alignItems: "center", justifyContent: "center", gap: "10px",
                       letterSpacing: "0.3px",
@@ -376,7 +376,7 @@ const ResetPassword = () => {
                       color: "#64748b", fontSize: "14px", fontWeight: 600,
                       textDecoration: "none", transition: "color 0.2s",
                     }}
-                    onMouseOver={(e) => e.currentTarget.style.color = "#1976d2"}
+                    onMouseOver={(e) => e.currentTarget.style.color = "#6ea00a"}
                     onMouseOut={(e) => e.currentTarget.style.color = "#64748b"}
                   >
                     <FiArrowLeft size={16} />
@@ -401,7 +401,7 @@ const ResetPassword = () => {
         {/* Bottom link */}
         <p style={{ textAlign: "center", color: "rgba(255,255,255,0.7)", marginTop: "20px", fontSize: "13px" }}>
           Need help?{" "}
-          <Link to="/contact" style={{ color: "#fff", fontWeight: 700, textDecoration: "underline" }}>
+          <Link to="/contact" style={{ color: "#a8d40e", fontWeight: 700, textDecoration: "underline" }}>
             Contact Support
           </Link>
         </p>

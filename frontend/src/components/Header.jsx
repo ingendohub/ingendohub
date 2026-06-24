@@ -6,7 +6,7 @@ import {
   FiPackage, FiCreditCard, FiSettings, FiStar,
   FiHome, FiHelpCircle, FiPhone, FiMessageCircle, FiMessageSquare
 } from "react-icons/fi";
-import logo from "../assets/logo.svg";
+import logo from "../assets/word-logo.jpg";
 import "../styles/header.css";
 import { useLang } from "../i18n/LanguageContext";
 

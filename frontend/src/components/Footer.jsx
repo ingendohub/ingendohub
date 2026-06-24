@@ -1,6 +1,7 @@
 import { useState, useRef, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { FaFacebook, FaInstagram, FaTwitter, FaLinkedin } from "react-icons/fa";
+import { FaFacebook, FaInstagram, FaLinkedin } from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
 import "../styles/footer.css";
 import { useLang } from "../i18n/LanguageContext";
 
@@ -38,7 +39,7 @@ const Footer = () => {
           <div className="social-icons">
             <a href="https://www.facebook.com/profile.php?id=61590588043293" target="_blank" rel="noreferrer"><FaFacebook /></a>
             <a href="https://www.instagram.com/ingendohub/?hl=en" target="_blank" rel="noreferrer"><FaInstagram /></a>
-            <a href="https://x.com/ingendohub" target="_blank" rel="noreferrer"><FaTwitter /></a>
+            <a href="https://x.com/ingendohub" target="_blank" rel="noreferrer"><FaXTwitter /></a>
             <a href="https://linkedin.com" target="_blank" rel="noreferrer"><FaLinkedin /></a>
           </div>
         </div>
