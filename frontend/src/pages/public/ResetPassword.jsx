@@ -3,7 +3,7 @@ import { useParams, useNavigate, Link } from "react-router-dom";
 import { FiLock, FiEye, FiEyeOff, FiAlertCircle, FiCheckCircle, FiArrowLeft, FiShield } from "react-icons/fi";
 import axiosPublic from "../../api/public/axiosPublic";
 import { useLang } from "../../i18n/LanguageContext";
-import logo from "../../assets/word-logo.jpg";
+import logo from "../../assets/logo.png";
 
 const PasswordStrength = ({ password }) => {
   const getStrength = (pwd) => {
@@ -132,18 +132,20 @@ const ResetPassword = () => {
             {/* Logo */}
             <div style={{
               display: "flex", alignItems: "center", justifyContent: "center",
-              gap: "12px", marginBottom: "20px"
+              marginBottom: "20px"
             }}>
               <div style={{
-                width: 44, height: 44, borderRadius: "12px",
-                overflow: "hidden", border: "2px solid rgba(255,255,255,0.3)",
-                background: "#000", flexShrink: 0
+                background: "#fff",
+                borderRadius: "12px",
+                padding: "8px 20px",
+                boxShadow: "0 2px 12px rgba(0,0,0,0.2)",
               }}>
-                <img src={logo} alt="Ingendohub" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+                <img
+                  src={logo}
+                  alt="Ingendohub"
+                  style={{ height: "36px", width: "auto", display: "block" }}
+                />
               </div>
-              <span style={{ color: "#fff", fontWeight: 800, fontSize: "20px", letterSpacing: "1px" }}>
-                INGENDOHUB
-              </span>
             </div>
 
             {/* Icon */}

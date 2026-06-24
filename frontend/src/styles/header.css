@@ -37,14 +37,15 @@
 }
 
 .header-logo img {
-  height: 48px;
+  height: 44px;
   width: auto;
-  max-width: 220px;
+  max-width: 200px;
   object-fit: contain;
   object-position: left center;
   border: none;
   background: transparent;
   box-shadow: none;
+  border-radius: 6px;
 }
 
 /* Desktop Nav */
@@ -745,6 +746,7 @@
 }
 
 :root[data-theme="dark"] .header-logo { color: #ddeabb; }
+:root[data-theme="dark"] .header-logo img { filter: brightness(0) invert(1) sepia(1) saturate(2) hue-rotate(60deg) brightness(0.9); }
 :root[data-theme="dark"] .nav-link { color: #8fa870; }
 :root[data-theme="dark"] .nav-link:hover { background: rgba(140, 196, 14, 0.1); color: #8cc40e; }
 :root[data-theme="dark"] .nav-link::after { background: #8cc40e; }

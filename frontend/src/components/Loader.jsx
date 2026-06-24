@@ -1,6 +1,6 @@
 // src/components/Loader.jsx
 import { useEffect, useState } from 'react';
-import logo from '../assets/word-logo.jpg';
+import logo from '../assets/logo.png';
 
 const Loader = () => {
   const [hide, setHide] = useState(false);
