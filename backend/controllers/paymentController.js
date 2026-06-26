@@ -111,7 +111,7 @@ const ensureTicket = async (booking, payment, session) => {
         amountPaid: payment.amount,
         currency: payment.currency,
         paymentMethod: payment.payment_method,
-
+        status: "VALID",
         issuedAt: new Date(),
       },
     },
@@ -130,16 +130,36 @@ const ensureTicket = async (booking, payment, session) => {
   return ticket;
 };
 
+// Shape ticket for frontend consumption
+const formatTicketForResponse = (ticket, booking) => ({
+  ticketNumber: ticket.ticketNumber,
+  qrCodeData: ticket.qrCodeData,
+  bookingRef: booking.bookingRef,
+  passengerName: ticket.passengerName,
+  passengerEmail: ticket.passengerEmail,
+  passengerPhone: ticket.passengerPhone,
+  seats: ticket.seats,
+  numberOfSeats: ticket.numberOfSeats,
+  trip: booking.trip || ticket.trip || null,
+  amountPaid: ticket.amountPaid,
+  currency: ticket.currency,
+  paymentMethod: ticket.paymentMethod,
+  status: ticket.status || "VALID",
+  issuedAt: ticket.issuedAt,
+  companyId: booking.company || null,
+});
+
+
 const completePaymentVerification = async ({ tx_ref, transaction_id }) => {
   const session = await mongoose.startSession();
   session.startTransaction();
 
   try {
-    if (!tx_ref || !transaction_id) {
+    if (!tx_ref) {
       await session.abortTransaction();
       return {
         status: "FAILED",
-        message: "Missing parameters",
+        message: "Missing tx_ref parameter",
       };
     }
 
@@ -164,7 +184,7 @@ const completePaymentVerification = async ({ tx_ref, transaction_id }) => {
       return {
         status: "SUCCESS",
         ticketUrl: `/api/ticket/${tx_ref}`,
-        ticket,
+        ticket: formatTicketForResponse(ticket, booking),
       };
     }
 
@@ -279,7 +299,7 @@ const completePaymentVerification = async ({ tx_ref, transaction_id }) => {
     return {
       status: "SUCCESS",
       ticketUrl: `/api/ticket/${tx_ref}`,
-      ticket,
+      ticket: formatTicketForResponse(ticket, booking),
     };
   } catch (err) {
     await session.abortTransaction();

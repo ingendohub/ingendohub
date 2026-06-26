@@ -14,6 +14,8 @@ const PaymentSuccess = () => {
   const isDashboard = !!outletContext;
   const navigate = useNavigate();
 
+  const API_URL = process.env.REACT_APP_API_URL || "http://localhost:3001/api";
+
   const [status, setStatus] = useState("verifying");
   const [ticket, setTicket] = useState(null);
   const [error, setError] = useState(null);
@@ -72,7 +74,7 @@ const PaymentSuccess = () => {
       console.log(`🔁 Attempt ${attempts + 1} for ${tx_ref}`);
 
       try {
-        const url = `http://localhost:3001/api/payments/verify?tx_ref=${tx_ref}${
+        const url = `${API_URL}/payments/verify?tx_ref=${tx_ref}${
           transaction_id ? `&transaction_id=${transaction_id}` : ""
         }&_t=${Date.now()}`;
 
@@ -231,7 +233,7 @@ const PaymentSuccess = () => {
   ).toLocaleString();
   const qrCodeData =
     ticket.qrCodeData ||
-    `http://localhost:3001/api/ticket/verify/${encodeURIComponent(
+    `${API_URL}/ticket/verify/${encodeURIComponent(
       ticket.ticketNumber
     )}`;
 
@@ -311,7 +313,7 @@ const PaymentSuccess = () => {
       {/* DOWNLOAD BUTTON */}
       <div style={{ textAlign: "center", marginTop: 30 }}>
         <a
-          href={`http://localhost:3001/api/payments/ticket/${tx_ref}/pdf`}
+          href={`${API_URL}/payments/ticket/${tx_ref}/pdf`}
           target="_blank"
           rel="noreferrer"
           download

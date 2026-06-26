@@ -390,7 +390,7 @@ const BookingSummary = () => {
             Payment completed successfully. Your e-ticket is ready!
           </p>
           <a
-            href={`http://localhost:3001/api/ticket/${booking.bookingRef}/pdf`}
+            href={`${process.env.REACT_APP_API_URL || "http://localhost:3001/api"}/payments/ticket/${booking.bookingRef}/pdf`}
             target="_blank"
             rel="noopener noreferrer"
             style={{

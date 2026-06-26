@@ -7,6 +7,7 @@ import {
   FiHome, FiHelpCircle, FiPhone, FiMessageCircle, FiMessageSquare
 } from "react-icons/fi";
 import logo from "../assets/logo.png";
+import darkLogo from "../assets/dark-mode-logo.png";
 import "../styles/header.css";
 import { useLang } from "../i18n/LanguageContext";
 
@@ -88,7 +89,7 @@ const Header = ({ onOpenLogin, onOpenSignup }) => {
 
         {/* Logo */}
         <Link to="/" className="header-logo">
-          <img src={logo} alt="Ingendohub Logo" />
+          <img src={theme === "dark" ? darkLogo : logo} alt="Ingendohub Logo" />
         </Link>
 
         {/* Desktop Nav */}

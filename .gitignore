@@ -1,6 +1,38 @@
+# ========================
+# Dependencies
+# ========================
 node_modules/
+**/node_modules/
+
+# ========================
+# Environment files (NEVER commit secrets)
+# ========================
 .env
-.DS_Store
+.env.local
+.env.production
+.env.production.local
+.env.development.local
+.env.test.local
+**/.env
+!**/.env.example
+
+# ========================
+# Build outputs
+# ========================
 dist/
 build/
+frontend/build/
+
+# ========================
+# OS / Editor artifacts
+# ========================
+.DS_Store
+Thumbs.db
+*.log
+
+# ========================
+# IDE
+# ========================
+.vscode/
+.idea/
 .gemini/

@@ -19,7 +19,7 @@ const PaymentVerify = () => {
     const verifyPayment = async () => {
       try {
         const res = await axios.get(
-          "http://localhost:3001/api/payments/verify",
+          `${process.env.REACT_APP_API_URL || "http://localhost:3001/api"}/payments/verify`,
           {
             params: { tx_ref: txRef },
           }

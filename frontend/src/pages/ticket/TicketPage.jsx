@@ -19,7 +19,7 @@ const TicketPage = () => {
   const [error, setError] = useState("");
   const [ticket, setTicket] = useState(null);
 
-  const API_URL = "http://localhost:3001/api/payments";
+  const API_URL = process.env.REACT_APP_API_URL || "http://localhost:3001/api";
 
   useEffect(() => {
     if (!bookingid) {
@@ -29,7 +29,7 @@ const TicketPage = () => {
 
     const fetchTicket = async () => {
       try {
-        const res = await fetch(`${API_URL}/ticket/${bookingid}`);
+        const res = await fetch(`${API_URL}/payments/ticket/${bookingid}`);
         if (!res.ok) throw new Error("Ticket not found");
 
         const data = await res.json();
@@ -45,7 +45,7 @@ const TicketPage = () => {
     fetchTicket();
   }, [bookingid, navigate, isDashboard]);
 
-  const pdfUrl = `${API_URL}/ticket/${bookingid}/pdf`;
+  const pdfUrl = `${API_URL}/payments/ticket/${bookingid}/pdf`;
 
   const downloadTicket = () => {
     if (!ticket?.ticketNumber) return;
@@ -101,7 +101,7 @@ const TicketPage = () => {
   const seatsDisplay = seatsArray.length ? seatsArray.join(", ") : "Seat info unavailable";
   const qrCodeData =
     ticket.qrCodeData ||
-    `http://localhost:3001/api/ticket/verify/${encodeURIComponent(ticket.ticketNumber)}`;
+    `${API_URL}/ticket/verify/${encodeURIComponent(ticket.ticketNumber)}`;
 
   return (
     <main className="ticket-page">

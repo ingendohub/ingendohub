@@ -141,8 +141,7 @@ exports.sendBookingPendingEmail = async (booking, frontendUrl) => {
     to: booking.email,
     subject: `Action Required: Complete Payment for Booking ${booking.bookingRef}`,
     html,
-    attachments: [{ filename: 'logo.png', path: path.join(__dirname, '../assets/logo.png'), cid: 'logo' }],
-    attachments: [{ filename: 'logo.png', path: path.join(__dirname, '../assets/logo.png'), cid: 'logo' },
+    attachments: [
       {
         filename: 'logo.png',
         path: path.join(__dirname, '../assets/logo.png'),

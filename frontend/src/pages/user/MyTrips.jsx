@@ -139,7 +139,7 @@ const MyTrips = () => {
                     disabled={status !== "CONFIRMED"}
                     onClick={() => {
                       if (status === "CONFIRMED") {
-                        window.open(`http://localhost:3001/api/ticket/${ref}/pdf`, "_blank");
+                        window.open(`${process.env.REACT_APP_API_URL || "http://localhost:3001/api"}/payments/ticket/${ref}/pdf`, "_blank");
                       }
                     }}
                   >

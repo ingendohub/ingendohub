@@ -32,7 +32,7 @@ const CompanyRegister = () => {
     try {
       // ✅ Removed 'res' to fix ESLint warning
       await axios.post(
-        "http://localhost:3001/api/company/auth/register",
+        `${process.env.REACT_APP_API_URL || "http://localhost:3001/api"}/company/auth/register`,
         form
       );
 
